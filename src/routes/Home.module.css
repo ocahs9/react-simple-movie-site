@@ -1,0 +1,30 @@
+.container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh; /*뷰포트 기준 100퍼센트 높이*/
+  display: flex;
+  justify-content: center; /*수평 가운데*/
+  align-items: center; /*수직 가운데*/
+  font-weight: 300;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));  /*열을 2개로 나누어 생각할건데, 최소 400px을 갖게 하고, 그 이상은 균등하게 1:1로 나누어가질 수 있게 만듬*/
+  grid-gap: 100px;
+  padding: 50px;
+  width: 80%;
+  padding-top: 70px;
+}
+
+@media screen and (max-width: 1090px) { /*1090px이하의 screen에서 적용할 스타일을 정의*/
+  .movies {
+    grid-template-columns: 1fr; /*열은 한개로*/
+    width: 100%; /*부모 요소 대비 100%*/
+  }
+}

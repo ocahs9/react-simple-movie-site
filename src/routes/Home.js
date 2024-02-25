@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import Movie from "../component/Movie";
+import styles from "./Home.module.css";
 
 function Home()
 {
@@ -17,9 +18,9 @@ function Home()
     getMovies();
   }, []); //딱 한번만 가져오도록 useEffect 활용
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (<h1>Loading...</h1>) : (
-        <div>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               id = {movie.id}
